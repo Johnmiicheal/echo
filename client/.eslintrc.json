@@ -13,6 +13,8 @@
   //   "@typescript-eslint"
   // ],
   "rules": {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
     // "eqeqeq": "error",
     // "no-console": "off",
     // "prettier/prettier": "error",
@@ -22,24 +24,24 @@
   //   "react/react-in-jsx-scope": "off",
   //   "react-hooks/rules-of-hooks": "error",
   //   "react-hooks/exhaustive-deps": "warn"
-  },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
-  },
-  "ignorePatterns": [
-    "node_modules",
-    "build",
-    "dist",
-    "public"
-  ]
+  }
+  // "parserOptions": {
+  //   "ecmaVersion": 6,
+  //   "sourceType": "module",
+  //   "ecmaFeatures": {
+  //     "jsx": true
+  //   }
+  // },
+  // "env": {
+  //   "browser": true,
+  //   "node": true,
+  //   "es6": true,
+  //   "jest": true
+  // },
+  // "ignorePatterns": [
+  //   "node_modules",
+  //   "build",
+  //   "dist",
+  //   "public"
+  // ]
 }
