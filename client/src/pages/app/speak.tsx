@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Speak = () => {
   const { recording, speaking, transcribing, transcript, pauseRecording, startRecording, stopRecording } = useWhisper({
-    apiKey: process.env.OPENAPI, // YOUR_OPEN_AI_TOKEN
+    apiKey: "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", // YOUR_OPEN_AI_TOKEN
     streaming: true,
     timeSlice: 1_000, // 1 second
     whisperConfig: {
