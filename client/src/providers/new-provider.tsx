@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { Action, initialState, reducer, State } from '@/state/reducers/app-reducer';
 import { createContext, FC, PropsWithChildren, Reducer, useReducer } from 'react';
 
