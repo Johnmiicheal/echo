@@ -17,3 +17,4 @@ export default function Accordion({ visible, children }: Props) {
     </div>
   );
 }
+  

@@ -29,16 +29,21 @@ export default function Form() {
   return (
     <div className="relative rounded-md w-full my-3">
       <form className="w-full grid place-items-center">
+        <label className="block mb-2 text-sm font-medium text-white dark:text-gray-900" htmlFor="file_input">
+          Upload file
+        </label>
         <input
+          className="block w-full text-md text-gray-900 border border-gray-300 rounded cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+          aria-describedby="file_input_help"
+          id="file_input"
           type="file"
-          disabled={disabled}
           accept=".mp3, .mp4"
           onChange={handleFileChange}
-          className={`${
-            disabled ? 'opacity-50' : 'opacity-100'
-          } form-input py-3 px-4 w-full border-none leading-5 rounded-md transition duration-150 ease-in-out bg-[#101214] border placeholder-grey-600 text-white focus:outline-none`}
-          placeholder="Video/Audio File"
         />
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
+          MP3 only
+        </p>
+
         <div className="mt-2 " />
         <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
           <div
@@ -56,7 +61,7 @@ export default function Form() {
             className={`flex items-center mt-4 bg-indigo-500 text-white py-1 px-4 rounded hover:bg-indigo-700 transition duration-500 ease-in-out `}
           >
             {uploadLoading ? <Loading /> : null}
-            Upload Video/Audio
+            Upload Audio
           </button>
         ) : null}
       </form>

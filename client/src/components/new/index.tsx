@@ -43,17 +43,17 @@ export default function New() {
   }
 
   return (
-    <div className="grid place-items-center">
-      <h1 className="text-2xl my-10">Generate high-quality transcripts and summaries of YouTube videos</h1>
+    <div className="grid place-items-center px-48">
+      <h1 className="text-2xl my-10">Generate transcripts from your audio files</h1>
       <Form />
       {uploadedFile ? <Video file={uploadedFile} transformLoading={transformLoading} /> : null}
       {uploadedFile ? (
         <button
           onClick={() => extractTranscriptions()}
-          className={`mt-4 bg-teal-500 mx-auto flex items-center text-white py-1 px-4 rounded hover:bg-teal-700 transition duration-500 ease-in-out`}
+          className={`mt-4 bg-indigo-500 mx-auto flex items-center text-white py-1 px-4 rounded hover:bg-indigo-700 transition duration-500 ease-in-out`}
         >
           {transformLoading ? <Loading /> : null}
-          Transform
+          Transcribe
         </button>
       ) : null}
       {uploadedFile?.file ? (
