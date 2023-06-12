@@ -1,19 +1,22 @@
+# ECHO Project
 
-# Video/Audio Transcriber
-
-An OpenAI's Whisper-based full-stack project to transcribe audio and video files using React & Django.
+An OpenAI Whisper-based full-stack project to transcribe audio and video files using React & Django.
 
 
 ## Demo
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/119813438/213866880-486c1f85-c139-4c56-8dc8-98a0398ec674.gif)
+![image](https://github.com/Johnmiicheal/echo/assets/69642932/ff8e68c4-0be1-4aa0-b448-f24118ae0cf7)
+
+![image](https://github.com/Johnmiicheal/echo/assets/69642932/d150cbc0-6d30-48c8-82dd-2c0b2bbb7cd8)
+![image](https://github.com/Johnmiicheal/echo/assets/69642932/b56415f4-8667-4cbb-ac0f-1988f61d4048)
+
 
 
 ## Installation
 
 You need the latest versions of pipenv and node to setup this project.
 
-- First clone the repository `git clone https://github.com/ali-h-kudeir/transcribe-video-audio` and navigate to the project's folder
-`cd transcribe-video-audio`
+- First clone the repository `git clone https://github.com/johnmiicheal/echo` and navigate to the project's folder
+`cd echo`
 - Install the dependencies of both the client and server.
 - Run both the client and server separately
 - Go to http//localhost:3000 to upload and transcribe your media files.
@@ -21,6 +24,7 @@ You need the latest versions of pipenv and node to setup this project.
 
 1- To install the server's dependencies, in the terminal run the following:
 
+** with pipenv **
 ```bash
   cd api
   pipenv install
@@ -29,6 +33,15 @@ You need the latest versions of pipenv and node to setup this project.
   pipenv run python manage.py migrate
   pipenv run server
 ```
+
+** with pip **
+```bash
+  cd api
+  pip install -r requirements.txt
+  python manage.py makemigrations
+  python manage.py migrate
+  python manage.py runserver
+ ```
 - Navigate to navigate to http://localhost:8000 to check if the server was setup successfully.
 
 2- To run the client, execute the following commands:
@@ -46,6 +59,7 @@ NEXT_PUBLIC_ROOT_URL=http://127.0.0.1:8000
 NEXT_PUBLIC_ALL_FILES_URL=http://127.0.0.1:8000/api/transcription/files/
 NEXT_PUBLIC_FILE_UPLOAD_URL=http://127.0.0.1:8000/api/transcription/files/
 NEXT_PUBLIC_TRANSCRIPTION_URL=ws://127.0.0.1:8000/ws/transcribe
+OPENAPI=sk-youropenaiapikeygoeshere
 ```
 
 Adjust these if your going to deploy to any remote server.
@@ -58,8 +72,12 @@ Adjust these if your going to deploy to any remote server.
 
 4- You can also view all your uploaded video and audio files and see their transcriptions. Their is an additional export button that allows you to download a JSON file with all their information.
 
-- Note that this project only allows MP4, and MP3 format files. 
+- Currently tested for only .mp3 files 
 - Additional Notes Make sure ffmpeg is installed on your machine and available on your system's PATH
+
+## System Design
+![image](https://github.com/Johnmiicheal/echo/assets/69642932/f1366efb-d1ac-433f-ae42-67ecccd3d153)
+
 
 ## License
 
@@ -75,4 +93,5 @@ Open a PR or an issue for extra features and bug fixes.
 ## Authors
 
 - [@ali-h-kudeir](https://www.github.com/ali-h-kudeir)
+- [@johnmiicheal](https://www.github.com/johnmiicheal)
 
