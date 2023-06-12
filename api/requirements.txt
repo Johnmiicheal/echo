@@ -1,0 +1,12 @@
+channels==4.0.0
+daphne==4.0.0
+Django==4.2.2
+django-cors-headers==4.0.0
+djangorestframework==3.14.0
+ffmpeg-python==0.2.0
+openai-whisper==20230314
+pipenv==2023.6.2
+pydub==0.25.1
+pytube==15.0.0
+setuptools==67.8.0
+transformers==4.30.0x  
