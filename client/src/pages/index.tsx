@@ -1,64 +1,75 @@
-'use client';
-import { useRouter } from 'next/router';
+"use client";
+import { useRouter } from "next/router";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function HomePage() {
   const router = useRouter();
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-         <img width="64" height="64" src="https://img.icons8.com/arcade/64/high-volume.png" alt="high-volume"/>
-          Audio Transcription
-        </a>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign in to your account
-            </h1>
-            <form className="space-y-4 md:space-y-6" action="/app">
-              <div>
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Your email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@gmail.com"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              >
-                Sign in
-              </button>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet?{' '}
-                <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">
-                  Sign up
-                </a>
-              </p>
-            </form>
+      <body className="bg-[url('/bg.png')] bg-center">
+        <header className="justify-between flex py-4 px-5 h-14 items-center">
+          <a
+            href="/"
+            className="flex items-center text-xl font-semibold text-gray-900 dark:text-white gap-1"
+          >
+            <img
+              width="32"
+              height="32"
+              className="bg-black rounded-full"
+              src="https://img.icons8.com/wired/64/ffffff/voice-recognition-scan.png"
+              alt="voice-recognition-scan"
+            />
+            ECHO
+          </a>
+          <div>
+            <button
+              className="z-40 bg-white outline outline-black outline-1 text-black px-4 py-2 relative"
+              onMouseEnter={() => {
+                const divs = document.querySelectorAll(".hover-div");
+                divs.forEach((div) => {
+                  div.classList.add("bg-indigo-600");
+                });
+              }}
+              onMouseLeave={() => {
+                const divs = document.querySelectorAll(".hover-div");
+                divs.forEach((div) => {
+                  div.classList.remove("bg-indigo-600");
+                });
+              }}
+              onClick={()=> router.push('/signin')}
+            >
+              Sign In
+            </button>
+            <div
+              className="z-20 h-10 w-20 outline outline-black outline-1 hover-div"
+              style={{ marginTop: -37, marginLeft: -4 }}
+            ></div>
+            <div
+              className="z-0 h-10 w-20 outline outline-black outline-1 "
+              style={{ marginTop: -37, marginLeft: -8 }}
+            ></div>
           </div>
-        </div>
+        </header>
+        <section>
+          <div className="justify-center items-center px-40">
+            <h1
+              className="text-center text-5xl font-black mt-20"
+              style={{ lineHeight: 1.4, color: 'black' }}
+            >
+              Transcribe speech to text and be <br />a part of wholesome
+              conversations.
+            </h1>
+            <Player
+              autoplay
+              loop
+              src="/conversation.json"
+              style={{ height: "400px", width: "400px" }}
+            ></Player>
+          </div>
+        </section>
+        <div className="fixed bottom-0 bg-white outline outline-black outline-2 text-black px-4 w-full">
+        &copy; 2023 Echo: A final year project of Olumuyiwa Favour Jesutomisin- Covenant University
       </div>
-    </section>
+      </body>
   );
 }

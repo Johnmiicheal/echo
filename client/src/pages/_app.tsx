@@ -1,9 +1,21 @@
 import { AppProps } from 'next/app';
 import '../styles/global.css';
 import Head from 'next/head';
+import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
+  const [showChild, setShowChild] = React.useState(false);
+  React.useEffect(() => {
+    setShowChild(true);
+  }, []);
+
+  if (!showChild) {
+    return null;
+  }
+  if (typeof window === "undefined") {
+    return <></>;
+  } else {
+    return (
     <>
     <Head>
       <title>
@@ -15,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     
     </>
   )
+}
 }
 
 export default MyApp;
